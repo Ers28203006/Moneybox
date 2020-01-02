@@ -1,0 +1,15 @@
+﻿@model Moneybox.Client.Models.CashBox
+@{
+    ViewBag.Title = "Home Page";
+}
+<div>
+    @using (Ajax.BeginForm("AddMoney", new AjaxOptions { UpdateTargetId = "result" }))
+    {
+        <input type="text" name="sum" />
+        <input type="submit" value="ADD CASH" />
+    }
+</div>
+<div id="result"></div>
+
+@Scripts.Render("~/scripts/jquery-3.4.1.min.js")
+@Scripts.Render("~/scripts/jquery.unobtrusive-ajax.min.js")
